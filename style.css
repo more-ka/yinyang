@@ -1,0 +1,43 @@
+*{
+ margin:0;padding:0; 
+}body{background: lightgrey;height:100vh;}
+.yinyang{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 51%, rgba(0,0,0,1) 51%, rgba(0,0,0,1) 100%);
+  position: relative;
+  animation-duration: 2s; /*动画时间*/
+  animation-name: rotate; /*动画名字*/
+  animation-iteration-count:infinite; /*动画次数(无限次)*/
+  animation-timing-function: linear;  /*动画过程(线性)*/
+}
+.yinyang::before{
+  content: '';
+  border: 1px solid red;
+  width: 20px;
+  height: 20px;
+  border: 40px solid black;
+  border-radius: 50%;
+  left: 0px;
+  top: 50px;
+  background: white;
+  position: absolute;
+}
+.yinyang::after{
+  content: '';
+  border: 1px solid red;
+  width: 20px;
+  height: 20px;
+  border: 40px solid white;
+  border-radius: 50%;
+  right: 0px;
+  top: 50px;
+  background: black;
+  position: absolute;
+}
+@keyframes rotate {
+ from { transform:rotate(0deg) }
+  to { transform:rotate(360deg)}
+}
